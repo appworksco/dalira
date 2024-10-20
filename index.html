@@ -35,10 +35,6 @@
               <div id="results"></div>
             </form>
           </div>
-          <button type="button" class="btn-changelog btn btn-primary d-none d-lg-flex" data-bs-toggle="modal"
-            data-bs-target="#changelogModal">
-            Changelog
-          </button>
         </div>
       </div>
     </div>
@@ -59,24 +55,13 @@
           <!-- Introduction -->
           <li class="nav-item section-title">
             <a class="nav-link scrollto" href="#introduction">Introduction</a>
-            <ul class="nav flex-column mt-2 lvl2">
-              <li class="nav-item">
-                <a class="nav-link scrollto" href="#gettingStarted">Getting Started</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link scrollto" href="#fileStructure">File Structure</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link scrollto" href="#item-1-1">Starter Template</a>
-              </li>
-            </ul>
           </li>
           <!-- Integration -->
           <li class="nav-item section-title">
-            <a class="nav-link scrollto" href="#section-4">Integrations</a>
+            <a class="nav-link scrollto" href="#integration">Integrations</a>
             <ul class="nav flex-column mt-2 lvl2">
               <li class="nav-item">
-                <a class="nav-link scrollto" href="#item-4-1">Database</a>
+                <a class="nav-link scrollto" href="#database">Database</a>
               </li>
             </ul>
           </li>
@@ -104,73 +89,108 @@
 
     <div class="docs-content pb-0">
       <div class="container">
-        <article class="docs-article" id="introduction">
 
+        <!-- Introduction -->
+        <article class="docs-article" id="introduction">
           <header class="docs-header">
+            <!-- Introduction -->
             <h1 class="docs-heading">Introduction</h1>
-            <section class="docs-intro">
+            <section>
               <p class="lead">Dalira is a lightweight PHP framework designed for developers seeking an elegant syntax and rapid runtime performance for development tasks. It promotes a clean separation of concerns, enhancing the organization and maintainability of web applications.</p>
               <p>The framework handles data logic and database interactions, ensuring a clear structure for data management. It also manages the presentation layer, allowing developers to create dynamic and user-friendly interfaces without cluttering business logic. This simplicity and efficiency make Dalira an ideal choice for building robust web applications.</p>
             </section>
-          </header>
-
-          <section class="docs-section" id="gettingStarted">
-            <h2 class="section-heading">Getting Started</h2>
-            <p>To begin using Dalira, download the framework <a href="./public/file/dalira-framework-v1.0.0.rar">here</a>. Familiarize yourself with its file structure and core components to leverage its capabilities effectively. First, there is a requirement you should meet:</p>
-            <ul>
-              <li><a href="">XAMPP</a></li>
-            </ul>
-          </section>
-
-          <section class="docs-section" id="fileStructure">
-            <h2 class="section-heading">File Structure</h2>
-            <p>The directory is organized to facilitate efficient development and maintainability.</p>
-            <pre>
-dalira-template/
-├── app/                ← Application directory
-│   ├── layout/         ← Directory for headers and footers
-│   ├── modals/         ← Directory for modals
-│   └── models/         ← Directory for CRUD operations
-├── config/             ← Configuration directory
-└── public/             ← Public directory
-  ├── css/             ← Directory for CSS files
-  ├── img/             ← Directory for images
-  └── js/              ← Directory for JS files
-            </pre>
-            
-          </section>
-
-          <section class="docs-section" id="item-1-1">
-            <h2 class="section-heading">Starter Template</h2>
-            <p><span class="fw-bold">Create a new</span> <span class="text-danger">.php</span> <span class="fw-bold">file in the root project.</span> Include the <span class="text-danger">header.php</span> and <span class="text-danger">footer.php</span> files from a specified directory using their absolute paths. This method ensures that the files are included regardless of the current directory, allowing for consistent page structure.</p>
-            <div class="docs-code-block px-0">
-              <pre class="shadow-lg rounded mb-0">
-                <code class="language-php hljs pb-0">
-// Include the header
-&lt;?php include realpath(__DIR__ . '/app/layout/header.php') ?&gt;
-
-// Content can be placed here
-&lt;h1&gt;Hello world!&lt;/h1&gt;
-
-// Include the footer
-&lt;?php include realpath(__DIR__ . '/app/layout/footer.php') ?&gt;
-                </code>
+            <!-- Getting Started -->
+            <section>
+              <h3 class="mt-4">Getting Started</h3>
+              <p>To begin using Dalira, download the framework <a href="./public/file/dalira-framework-v1.0.0.rar">here</a>. Familiarize yourself with its file structure and core components to leverage its capabilities effectively. First, there is a requirement you should meet:</p>
+             <ul>
+               <li><a href="">XAMPP</a></li>
+             </ul>
+            </section>
+            <!-- File Structure -->
+            <section>
+              <h3 class="mt-4">File Structure</h3>
+              <p>The directory is organized to facilitate efficient development and maintainability.</p>
+              <pre>
+   dalira-template/
+   ├── app/                ← Application directory
+   │   ├── layout/         ← Directory for headers and footers
+   │   ├── modals/         ← Directory for modals
+   │   └── models/         ← Directory for CRUD operations
+   ├── config/             ← Configuration directory
+   └── public/             ← Public directory
+     ├── css/              ← Directory for CSS files
+     ├── img/              ← Directory for images
+     └── js/               ← Directory for JS files
               </pre>
-            </div>
-          </section>
-      
+            </section>
+            <!-- Starter Template -->
+            <section>
+              <h3 class="mt-4">Starter Template</h3>
+              <p><span class="fw-bold">Create a new</span> <span class="text-danger">.php</span> <span class="fw-bold">file in the root project.</span> Include the <span class="text-danger">header.php</span> and <span class="text-danger">footer.php</span> files from a specified directory using their absolute paths. This method ensures that the files are included regardless of the current directory, allowing for consistent page structure.</p>
+              <div class="docs-code-block px-0">
+                <pre class="shadow-lg rounded mb-0">
+                  <code class="language-php hljs pb-0">
+  // Include the header
+  &lt;?php include realpath(__DIR__ . '/app/layout/header.php') ?&gt;
+  
+  // Content can be placed here
+  &lt;h1&gt;Hello world!&lt;/h1&gt;
+  
+  // Include the footer
+  &lt;?php include realpath(__DIR__ . '/app/layout/footer.php') ?&gt;
+                  </code>
+                </pre>
+              </div>
+            </section>
+            <!-- Styling -->
+            <section>
+              <h3 class="mt-4">CSS & JS Components</h3>
+              <p>Dalira utilizes <span class="fw-bold">Bootstrap 5.0.2</span> as its primary styling framework. This allows for a responsive and modern design, leveraging Bootstrap's grid system and components.</p>
+              <p>To modify the styling or update the Bootstrap version, you can make changes in the <span class="fw-bold">header.php</span> and the <span class="fw-bold">footer.php</span> file.</p>
+              <h5>Steps to Change Bootstrap Version or Customize Styles</h5>
+              <ol>
+                <li>Locate <span class="fw-bold">header.php</span></li>
+                <ul>
+                  <li>Look for the link to the Bootstrap CSS file, which typically appears as shown in the code below. You can either change or update it, or replace it with another CSS framework.</li>
+                </ul>
+              </ol>
+              <div class="docs-code-block px-0">
+                <pre class="shadow-lg rounded mb-0">
+                  <code class="language-html hljs pb-0">
+  // app/layout/header.php           
+  &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"&gt;
+                  </code>
+                </pre>
+              </div>
+              <ol>
+                <li>Locate <span class="fw-bold">footer.php</span></li>
+                <ul>
+                  <li>Locate the Bootstrap-related script, typically formatted as shown in the code below. This script is essential for Bootstrap's JavaScript functionality, and you can update it or replace it with another framework as needed.</li>
+                </ul>
+              </ol>
+              <div class="docs-code-block px-0">
+                <pre class="shadow-lg rounded mb-0">
+                  <code class="language-html hljs pb-0">
+  // app/layout/footer.php           
+  &lt;script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"&gt;&lt;/script&gt;
+  &lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"&gt;&lt;/script&gt;
+                  </code>
+                </pre>
+              </div>
+            </section>
+          </header>
         </article>
 
-        <article class="docs-article" id="section-4">
-
+        <!-- Integrations -->
+        <article class="docs-article" id="integration">
           <header class="docs-header">
             <h1 class="docs-heading">Integrations</h1>
-            <section class="docs-intro">
+            <section>
               <p>Integration with Dalira simplifies the development workflow by enabling developers to connect various components and services seamlessly. This functionality enhances the application's capabilities, supports smooth data exchanges, and boosts overall performance, allowing developers to concentrate on crafting elegant and efficient web applications.</p>
             </section>
           </header>
-
-          <section class="docs-section" id="item-4-1">
+          <section id="database">
             <h2 class="section-heading">Database</h2>
             <p>Setting up the database is simple just download the example database from <a href="./public/file/dalira.sql">here</a> and import it on your phpmyadmin. After that, you'll need to update the connector.php file located in config/database. Change the private variable db to your desired database name.</p>
             <p>The PHP code defines a class DBConnection with private properties for the database host, user, password, and database name, and includes a protected connect method that constructs a Data Source Name (DSN) to establish a connection using PDO. It handles exceptions by catching PDOException errors and printing them if they occur.</p>
@@ -204,7 +224,6 @@ class DBConnection
               </pre>
             </div>
           </section>
-
         </article>
 
         <article class="docs-article pb-0" id="utilities">
@@ -214,7 +233,6 @@ class DBConnection
               <p>The utilities offered by Dalira are vital for improving development efficiency and addressing common tasks. These tools facilitate data handling, validation, and formatting, empowering developers to create robust applications without unnecessary complexity. By utilizing these utilities, developers can produce cleaner code and optimize performance, thus speeding up the development cycle and ensuring a higher quality outcome in their web projects.</p>
             </section>
           </header>
-
           <section class="docs-section" id="models">
             <h2 class="section-heading">Models</h2>
             <p>Models are frequently utilized to streamline the handling of database interactions, covering a wide range of tasks including data retrieval, insertion, updating, and deletion. Typically, these models are structured within the specified directory arrangement, commonly found at ./app/models/. Below, you'll find a demonstrative example illustrating the creation of a model designed specifically to execute CRUD (Create, Read, Update, Delete) operations.</p>
@@ -276,7 +294,6 @@ $modelsFacade = new ModelsFacade;
             </div>
           </section>
 
-
           <section class="docs-section" id="operations">
             <h2 class="section-heading">Operations</h2>
             <p>Vivamus efficitur fringilla ullamcorper. Cras condimentum condimentum mauris, vitae facilisis leo.
@@ -317,44 +334,6 @@ $modelsFacade = new ModelsFacade;
     </div>
   </div>
   <!--docs-wrapper-->
-
-  <!-- Modal -->
-  <div class="modal fade" id="changelogModal" tabindex="-1" aria-labelledby="changelogModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-scrollable">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title px-3 py-1" id="changelogModalLabel">Changelog</h4>
-          <button type="button" class="btn-close p-4" data-bs-dismiss="modal" aria-label="Close">
-          </button>
-        </div>
-        <div class="modal-body">
-          <div class="container">
-            <div class="row justify-content-center">
-              <div class="col-12">
-                <h6 class="mt-3"> <span class="p-2"> Version 1.0.0</span> - 29/06/2021</h6>
-                <ul class="mt-3 mb-5">
-                  <li class="ms-3">Lorem ipsum dolor sit amet</li>
-                  <li class="ms-3">Lorem ipsum dolor sit amet</li>
-                  <ul>
-                    <li class="ms-3">Lorem ipsum dolor sit amet</li>
-                    <li class="ms-3">Lorem ipsum dolor sit amet</li>
-                    <li class="ms-3">Lorem ipsum dolor sit amet</li>
-                  </ul>
-                  <li class="ms-3">Lorem ipsum dolor sit amet</li>
-                </ul>
-              </div>
-              <!--end col-->
-            </div>
-            <!--end row-->
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
 
   <script src="./public/js/bootstrap.js"></script>
   <script src="./public/js/jquery.js"></script>
