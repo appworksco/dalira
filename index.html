@@ -131,13 +131,10 @@
               <div class="docs-code-block px-0">
                 <pre class="shadow-lg rounded mb-0">
                   <code class="language-php hljs pb-0">
-  // Include the header
   &lt;?php include realpath(__DIR__ . '/app/layout/header.php') ?&gt;
   
-  // Content can be placed here
   &lt;h1&gt;Hello world!&lt;/h1&gt;
   
-  // Include the footer
   &lt;?php include realpath(__DIR__ . '/app/layout/footer.php') ?&gt;
                   </code>
                 </pre>
@@ -158,7 +155,8 @@
               <div class="docs-code-block px-0">
                 <pre class="shadow-lg rounded mb-0">
                   <code class="language-html hljs pb-0">
-  // app/layout/header.php           
+  // app/layout/header.php  
+
   &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"&gt;
                   </code>
                 </pre>
@@ -172,7 +170,8 @@
               <div class="docs-code-block px-0">
                 <pre class="shadow-lg rounded mb-0">
                   <code class="language-html hljs pb-0">
-  // app/layout/footer.php           
+  // app/layout/footer.php 
+
   &lt;script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"&gt;&lt;/script&gt;
   &lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"&gt;&lt;/script&gt;
                   </code>
@@ -282,7 +281,7 @@ class ModelsFacade extends DBConnection
             <p>Once a model is created, it needs to be initialized before it can be utilized on any page. To initialize the model, it should be included in the header file as demonstrated in the code located in "app/layout/".</p>
             <div class="docs-code-block px-0">
               <pre class="shadow-lg rounded mb-0">
-                <code class="language-php hljs pb-0">
+                <code class="language-php hljs pb-0">                  
 // Include necessary files for database connectivity and facade classes
 include(__DIR__ . '/../../config/db/connector.php');
 
