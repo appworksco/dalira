@@ -73,7 +73,7 @@
                 <a class="nav-link scrollto" href="#models">Models</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link scrollto" href="#operations">Operations</a>
+                <a class="nav-link scrollto" href="#crud">CRUD</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link scrollto" href="#authenticator">Authenticator</a>
@@ -127,9 +127,9 @@
             <!-- Starter Template -->
             <section>
               <h3 class="mt-4">Starter Template</h3>
-              <p><span class="fw-bold">Create a new</span> <span class="text-danger">test.php</span> <span class="fw-bold">file in the root project.</span> Include the <span class="text-danger">header.php</span> and <span class="text-danger">footer.php</span> files from a specified directory using their absolute paths. This method ensures that the files are included regardless of the current directory, allowing for consistent page structure.</p>
+              <p><span class="fw-bold">Create a new</span> <span class="text-danger">filename.php</span> <span class="fw-bold">file in the root project.</span> Include the <span class="text-danger">header.php</span> and <span class="text-danger">footer.php</span> files from a specified directory using their absolute paths. This method ensures that the files are included regardless of the current directory, allowing for consistent page structure.</p>
               <div class="card">
-                <div class="card-header text-center"><small>app/layout</small></div>
+                <div class="card-header text-center"><small>filename.php</small></div>
                 <div class="card-body p-0">
                   <pre class="shadow-lg rounded mb-0"><code class="language-php hljs py-0">
 &lt;?php include realpath(__DIR__ . '/app/layout/header.php') ?&gt;
@@ -145,9 +145,9 @@
             <section>
               <h3 class="mt-4">CSS & JS Components</h3>
               <p>Dalira utilizes <span class="fw-bold">Bootstrap 5.0.2</span> as its primary styling framework. This allows for a responsive and modern design, leveraging Bootstrap's grid system and components.</p>
-              <p>To modify the styling or update the Bootstrap version, you can make changes in the <span class="fw-bold">header.php</span> and the <span class="fw-bold">footer.php</span> file.</p>
+              <p>To modify the styling or update the Bootstrap version, you can make changes in the <span class="text-danger">header.php</span> and the <span class="text-danger">footer.php</span> file.</p>
               <h5>Steps to Change Bootstrap Version or Customize Styles</h5>
-              <p>1. Locate <span class="fw-bold">header.php</span></p>
+              <p>1. Locate <span class="text-danger">header.php</span></p>
               <ul>
                 <li>Look for the link to the Bootstrap CSS file, which typically appears as shown in the code below. You can either change or update it, or replace it with another CSS framework.</li>
               </ul>
@@ -159,7 +159,7 @@
                   </code></pre>
                 </div>
               </div>
-              <p class="pt-4">2. Locate <span class="fw-bold">footer.php</span></p>
+              <p class="pt-4">2. Locate <span class="text-danger">footer.php</span></p>
               <ul>
                 <li>Locate the Bootstrap-related script, typically formatted as shown in the code below. This script is essential for Bootstrap's JavaScript functionality, and you can update it or replace it with another framework as needed.</li>
               </ul>
@@ -181,13 +181,13 @@
           <header class="docs-header">
             <h1 class="docs-heading">Integrations</h1>
             <section>
-              <p>Integration with Dalira simplifies the development workflow by enabling developers to connect various components and services seamlessly. This functionality enhances the application's capabilities, supports smooth data exchanges, and boosts overall performance, allowing developers to concentrate on crafting elegant and efficient web applications.</p>
+              <p>Integration simplifies the development process by enabling developers to effortlessly connect various components and services within their applications. This functionality enhances capabilities, facilitates seamless data exchanges, and improves overall performance, allowing developers to focus on creating elegant and high-performing web applications. By leveraging these integration capabilities, teams can ensure their applications are well-structured and capable of adapting to evolving requirements while scaling effectively.</p>
             </section>
           </header>
           <section id="database">
             <h2 class="section-heading">Database</h2>
-            <p>Setting up the database is simple just download the example database from <a href="./public/file/dalira.sql">here</a> and import it on your phpmyadmin. After that, you'll need to update the connector.php file located in config/database. Change the private variable db to your desired database name.</p>
-            <p>The PHP code defines a class DBConnection with private properties for the database host, user, password, and database name, and includes a protected connect method that constructs a Data Source Name (DSN) to establish a connection using PDO. It handles exceptions by catching PDOException errors and printing them if they occur.</p>
+            <p>Setting up the database is simple just download the example database from <a href="./public/file/dalira.sql">here</a> and import it on your phpmyadmin. After that, you'll need to update the <span class="text-danger">connector.php</span> file located in config/database. Change the private variable db to your desired database name.</p>
+            <p>The PHP code defines a class <span class="fw-bold">DBConnection</span> with private properties for the database host, user, password, and database name, and includes a protected connect method that constructs a Data Source Name (DSN) to establish a connection using PDO. It handles exceptions by catching PDOException errors and printing them if they occur.</p>
             <div class="card">
               <div class="card-header text-center"><small>config/db/conn.php</small></div>
               <div class="card-body p-0">
@@ -225,7 +225,7 @@ class DBConnection
           <header class="docs-header">
             <h1 class="docs-heading">Utilities</h1>
             <section class="docs-intro">
-              <p>The utilities offered by Dalira are vital for improving development efficiency and addressing common tasks. These tools facilitate data handling, validation, and formatting, empowering developers to create robust applications without unnecessary complexity. By utilizing these utilities, developers can produce cleaner code and optimize performance, thus speeding up the development cycle and ensuring a higher quality outcome in their web projects.</p>
+              <p>Utilities are vital for improving development efficiency and addressing common tasks. These tools facilitate data handling, validation, and formatting, empowering developers to create robust applications without unnecessary complexity. By utilizing these utilities, developers can produce cleaner code and optimize performance, thus speeding up the development cycle and ensuring a higher quality outcome in their web projects.</p>
             </section>
           </header>
           <section class="docs-section" id="models">
@@ -289,22 +289,18 @@ $modelsFacade = new ModelsFacade;
                 </code></pre>
               </div>
             </div>
-            <div class="docs-code-block px-0">
-              <pre class="shadow-lg rounded mb-0">
-                <code class="language-php hljs pb-0">                  
-
-                </code>
-              </pre>
-            </div>
           </section>
 
-          <section class="docs-section" id="operations">
-            <h2 class="section-heading">Operations</h2>
-            <p>Vivamus efficitur fringilla ullamcorper. Cras condimentum condimentum mauris, vitae facilisis leo.
-              Aliquam sagittis purus nisi, at commodo augue convallis id. Sed interdum turpis quis felis bibendum
-              imperdiet. Mauris pellentesque urna eu leo gravida iaculis. In fringilla odio in felis ultricies
-              porttitor. Donec at purus libero. Vestibulum libero orci, commodo nec arcu sit amet, commodo sollicitudin
-              est. Vestibulum ultricies malesuada tempor.</p>
+          <section class="docs-section" id="crud">
+            <h2 class="section-heading">CRUD</h2>
+            <p>CRUD (Create, Read, Update, Delete) operations form the backbone of data management in web applications, enabling developers to efficiently handle data lifecycles.</p>
+            <ul>
+              <li><span class="fw-bold">Create</span> allows for the addition of new records, using methods that facilitate form submissions and input validation to ensure data integrity.</li>
+              <li><span class="fw-bold">Read</span> enables the retrieval of data, supporting various querying capabilities, including pagination and filtering, for easy access to information.</li>
+              <li><span class="fw-bold">Update</span> provides a straightforward way to modify existing records through user-friendly forms, incorporating validation to maintain data accuracy.</li>
+              <li><span class="fw-bold">Delete</span> facilitates the removal of records with built-in confirmation mechanisms, preventing accidental deletions.</li>
+            </ul>
+            <p>This comprehensive approach not only streamlines data handling but also enhances application performance.</p>
           </section>
 
           <section class="docs-section" id="authenticator">
