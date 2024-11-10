@@ -75,12 +75,6 @@
               <li class="nav-item">
                 <a class="nav-link scrollto" href="#crud">CRUD</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link scrollto" href="#authenticator">Authenticator</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link scrollto" href="#modals">Modals</a>
-              </li>
             </ul>
           </li>
         </ul>
@@ -115,7 +109,6 @@
    dalira-template/
    ├── app/                ← Application directory
    │   ├── layout/         ← Directory for headers and footers
-   │   ├── modals/         ← Directory for modals
    │   └── models/         ← Directory for CRUD operations
    ├── config/             ← Configuration directory
    └── public/             ← Public directory
@@ -301,31 +294,87 @@ $modelsFacade = new ModelsFacade;
               <li><span class="fw-bold">Delete</span> facilitates the removal of records with built-in confirmation mechanisms, preventing accidental deletions.</li>
             </ul>
             <p>This comprehensive approach not only streamlines data handling but also enhances application performance.</p>
-          </section>
+            <div class="card">
+              <div class="card-header text-center"><small>Create</small></div>
+              <div class="card-body p-0">
+                <pre class="shadow-lg rounded mb-0"><code class="language-php hljs py-0">
+&lt;?php 
 
-          <section class="docs-section" id="authenticator">
-            <h2 class="section-heading">Authenticator</h2>
-            <p>Vivamus efficitur fringilla ullamcorper. Cras condimentum condimentum mauris, vitae facilisis leo.
-              Aliquam sagittis purus nisi, at commodo augue convallis id. Sed interdum turpis quis felis bibendum
-              imperdiet. Mauris pellentesque urna eu leo gravida iaculis. In fringilla odio in felis ultricies
-              porttitor. Donec at purus libero. Vestibulum libero orci, commodo nec arcu sit amet, commodo sollicitudin
-              est. Vestibulum ultricies malesuada tempor.</p>
-          </section>
+include realpath(__DIR__ . '/app/layout/header.php');
 
-          <section class="docs-section" id="modals">
-            <h2 class="section-heading">Modals</h2>
-            <p>Vivamus efficitur fringilla ullamcorper. Cras condimentum condimentum mauris, vitae facilisis leo.
-              Aliquam sagittis purus nisi, at commodo augue convallis id. Sed interdum turpis quis felis bibendum
-              imperdiet. Mauris pellentesque urna eu leo gravida iaculis. In fringilla odio in felis ultricies
-              porttitor. Donec at purus libero. Vestibulum libero orci, commodo nec arcu sit amet, commodo sollicitudin
-              est. Vestibulum ultricies malesuada tempor.</p>
+// Check if the form has been submitted
+if (isset($_POST['submit'])) {
+    // Retrieve the submitted data from the form
+    $data = $_POST['data'];
+
+    // Validate that the data is not empty
+    if (empty($data)) {
+        // If the data is empty, add an error message to the $invalid array
+        array_push($invalid, "Data should not be empty.");
+    } else {
+        // Attempt to create a new entry with the provided data
+        $create = $modelsFacade->create($data);
+        // Check if the creation was successful
+        if ($create) {
+            // If successful, add a success message to the $success array
+            array_push($success, "Data has been inserted successfully.");
+        }
+    }
+}
+
+?&gt;
+
+&lt;?php include realpath(__DIR__ . '/errors.php') ?&gt;
+&lt;form action="test.php" method="post"&gt;
+    &lt;input type="text" placeholder="Data" name="data"&gt;
+    &lt;button type="submit" name="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+
+&lt;?php include realpath(__DIR__ . '/app/layout/footer.php') ?&gt;                  
+                </code></pre>
+              </div>
+            </div>
+            <div class="card mt-3">
+              <div class="card-header text-center"><small>Read</small></div>
+              <div class="card-body p-0">
+                <pre class="shadow-lg rounded mb-0"><code class="language-php hljs py-0">
+&lt;?php include realpath(__DIR__ . '/app/layout/header.php') ?&gt;
+
+&lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Data&lt;/th&gt;
+            &lt;th&gt;Action&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;?php
+        // Fetch the data from the database using the read method
+        $read = $modelsFacade-&gt;read();
+        
+        // Loop through each record returned from the database
+        foreach ($read as $data) { ?&gt;
+            &lt;tr&gt;
+                &lt;td&gt;&lt;?= htmlspecialchars($data['data']) ?&gt;&lt;/td&gt;
+                &lt;td&gt;
+                    &lt;a href="update.php?id=&lt;?= htmlspecialchars($data['id']) ?&gt;"&gt;Update&lt;/a&gt;
+                    &lt;a href="delete.php?id=&lt;?= htmlspecialchars($data['id']) ?&gt;"&gt;Delete&lt;/a&gt;
+                &lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;?php } ?&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;?php include realpath(__DIR__ . '/app/layout/footer.php') ?&gt;                                    
+                </code></pre>
+              </div>
+            </div>
           </section>
 
         </article>
 
         <footer class="footer">
           <div class="container text-center py-5">
-            <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
             <small class="copyright">Powered by
               <a class="theme-link" href="http://themes.3rdwavemedia.com" target="_blank">Appworks Co.</small>
           </div>
